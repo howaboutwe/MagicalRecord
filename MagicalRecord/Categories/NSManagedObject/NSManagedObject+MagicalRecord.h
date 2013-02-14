@@ -46,5 +46,7 @@
 - (id) MR_inContext:(NSManagedObjectContext *)otherContext;
 - (id) MR_inThreadContext;
 
++ (instancetype)instanceWithObjectID:(NSManagedObjectID *)objectID;
+
 @end
 
