@@ -28,6 +28,11 @@
     [self MR_saveWithOptions:MRSaveParentContexts completion:completion];
 }
 
+- (void) MR_saveSynchronouslyToPersistentStoreWithCompletion:(MRSaveCompletionHandler)completion;
+{
+    [self MR_saveWithOptions:MRSaveParentContexts | MRSaveSynchronously completion:completion];
+}
+
 - (void) MR_saveToPersistentStoreAndWait;
 {
     [self MR_saveWithOptions:MRSaveParentContexts | MRSaveSynchronously completion:nil];

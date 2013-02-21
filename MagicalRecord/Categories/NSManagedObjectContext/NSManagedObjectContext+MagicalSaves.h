@@ -27,6 +27,9 @@ typedef void (^MRSaveCompletionHandler)(BOOL success, NSError *error);
 /// \discussion Executes asynchronous saves on the current context, and any ancestors, until the changes have been persisted to the assigned persistent store. The completion block will always be called on the main queue.
 - (void) MR_saveToPersistentStoreWithCompletion:(MRSaveCompletionHandler)completion;
 
+/// HowAboutWe addition
+- (void) MR_saveSynchronouslyToPersistentStoreWithCompletion:(MRSaveCompletionHandler)completion;
+
 /// \brief      Synchronously save changes in the current context and it's parent
 /// \discussion Executes a save on the current context's dispatch queue. This method only saves the current context, and the parent of the current context if one is set. The method will not return until the save is complete.
 - (void) MR_saveOnlySelfAndWait;
