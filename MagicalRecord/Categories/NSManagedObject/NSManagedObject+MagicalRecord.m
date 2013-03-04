@@ -242,10 +242,12 @@ static NSUInteger defaultBatchSize = kMagicalRecordDefaultBatchSize;
     
     NSError *error;
     id object = [ctx existingObjectWithID:objectID error:&error];
-    if ([object isKindOfClass:self] == NO)
-        NSAssert(NO, @"You have the incorrect class");
     if (error) {
-        NSLog(@"error: %@", error);
+        NSLog(@"instanceWithObjectID error: %@", error);
+        return nil;
+    }
+    else if ([object isKindOfClass:self] == NO) {
+        NSAssert(NO, @"You have the incorrect class");
     }
     
     return object;
