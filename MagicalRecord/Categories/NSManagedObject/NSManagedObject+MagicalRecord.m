@@ -235,7 +235,7 @@ static NSUInteger defaultBatchSize = kMagicalRecordDefaultBatchSize;
 }
 
 + (instancetype)instanceWithObjectID:(NSManagedObjectID *)objectID {
-    if (objectID == nil)
+    if (objectID == nil || [objectID isKindOfClass:[NSNull class]])
         return nil;
     
     NSManagedObjectContext *ctx = [NSManagedObjectContext MR_contextForCurrentThread];
