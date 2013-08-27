@@ -5,6 +5,8 @@
 //  Copyright 2010 Magical Panda Software, LLC All rights reserved.
 //
 
+#import <CoreData/CoreData.h>
+
 #if TARGET_OS_IPHONE == 0
 #define MAC_PLATFORM_ONLY YES
 #endif
